@@ -1,4 +1,5 @@
 import { UserCard } from "@/component/cards/UserCard";
+import { ModeToggle } from "@/components/mode-toggle/mode-toggle";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function page() {
@@ -6,6 +7,7 @@ export default function page() {
     <>
     <UserCard />
     <Skeleton />
+    <ModeToggle />
     </>
   );
 }
