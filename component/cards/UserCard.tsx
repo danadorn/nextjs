@@ -25,7 +25,7 @@ async function fetchUsers(): Promise<User[]> {
     return response.json();
   } catch (error) {
     console.error("Fetch users error:", error);
-    return []; // prevent app crash
+    return []; 
   }
 }
 
