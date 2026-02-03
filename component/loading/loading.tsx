@@ -1,4 +1,4 @@
-import { SkeletonCard } from '@/app/component/skeletons/skeleton-card'
+import { SkeletonCard } from '@/component/skeletons/skeleton-card'
 import React from 'react'
 
 export default function ProductLoading() {
