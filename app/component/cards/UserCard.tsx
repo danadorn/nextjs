@@ -1,23 +1,36 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { User } from "@/lib/types/userType";
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "../ui/card";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
 
-import { User } from "@/lib/types/userType";
-async function loadProduct() {
-  const response = await fetch("https://api.escuelajs.co/api/v1/users", {
-    cache: "no-store",
-  });
-  return response.json();
+async function fetchUsers(): Promise<User[]> {
+  try {
+    const response = await fetch(
+      "https://api.escuelajs.co/api/v1/users",
+      {
+        cache: "no-store",
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch users");
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("Fetch users error:", error);
+    return []; // prevent app crash
+  }
 }
 
 export async function UserCard() {
-  const users: User[] = await loadProduct();
+  const users = await fetchUsers();
 
   return (
     <div className="container mx-auto px-4 text-center">

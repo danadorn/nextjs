@@ -1,6 +1,6 @@
-import { UserCard } from "@/component/cards/UserCard";
-import { ModeToggle } from "@/components/mode-toggle/mode-toggle";
-import { Skeleton } from "@/components/ui/skeleton";
+import { UserCard } from "@/app/component/cards/UserCard";
+import { ModeToggle } from "@/app/component/mode-toggle/mode-toggle";
+import { Skeleton } from "./component/ui/skeleton";
 
 export default function page() {
   return (
@@ -11,3 +11,5 @@ export default function page() {
     </>
   );
 }
+
+

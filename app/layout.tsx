@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
-import ProductLoading from "./products/loading";
-import { ThemeProvider } from "@/components/theme-provider/theme-provider";
-import Header from "@/components/ui/header";
+import ProductLoading from "./loading/loading";
+import { ThemeProvider } from "@/app/component/theme-provider/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,10 +36,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
+          <header />
           <Suspense fallback={<ProductLoading />}>{children}</Suspense>
         </ThemeProvider>
       </body>
     </html>
   );
 }
+
+
